@@ -3,7 +3,7 @@
 Script to extract vcf records that falls in the given bed region, small alternative to the bedtools intersect. It also gives the vcf records which does not fall in the given bed regions (reverse or -r parameter).
 
 ## Requirements
-* It require Python 3
+* Python 3
 * os
 * sys
 * csv
