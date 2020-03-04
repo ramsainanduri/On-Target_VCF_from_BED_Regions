@@ -54,7 +54,7 @@ if os.path.exists(vcf_head_name):
 
 ########################## Data Reading #####################################
 
-subprocess.call('grep -v "#" '+vcf_ori+' > '+vcf_ori+'.no_head ', shell=True)
+subprocess.call('grep -v "#" '+vcf_ori+' > '+vcf_ori+'.no_head', shell=True)
 subprocess.call('grep "#" '+vcf_ori+' > '+vcf_head_name+'', shell=True)
 vcf_nohead = pd.read_csv(vcf_ori+'.no_head', sep='\t', header=None)
 #vcf_head = pd.read_csv(vcf_ori+'.head', sep='\t', header=None)
@@ -143,6 +143,6 @@ elif reverse == "Y":
 	subprocess.call('sort -k1,1 -k2,2 -V -s '+vcf_merged+'.reverse.all.vcf > '+vcf_sorted+'.reverse.all.vcf', shell=True)
 	subprocess.call('cat '+vcf_head_name+' '+vcf_sorted+'.reverse.all.vcf > '+final_vcf_out+'.reverse.all.vcf', shell=True)
 
-subprocess.call('rm '+vcf_head_name+'* '+vcf_merged+'* '+vcf_sorted+'* '+cwd+'/chr*.temp*.vcf '+cwd+'/chr*.temp*.bed ', shell=True)
+subprocess.call('rm '+vcf_ori+'.no_head '+vcf_head_name+'* '+vcf_merged+'* '+vcf_sorted+'* '+cwd+'/chr*.temp*.vcf '+cwd+'/chr*.temp*.bed ', shell=True)
 
 ##########################################################################
