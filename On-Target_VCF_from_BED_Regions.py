@@ -57,12 +57,7 @@ if os.path.exists(vcf_head_name):
 subprocess.call('grep -v "#" '+vcf_ori+' > '+vcf_ori+'.no_head', shell=True)
 subprocess.call('grep "#" '+vcf_ori+' > '+vcf_head_name+'', shell=True)
 vcf_nohead = pd.read_csv(vcf_ori+'.no_head', sep='\t', header=None)
-#vcf_head = pd.read_csv(vcf_ori+'.head', sep='\t', header=None)
 bed_raw = pd.read_csv(bed_ori, sep='\t', header=None)
-
-#vcf_head = vcf_raw[vcf_raw[0].str.contains('#')]
-#vcf_head.to_csv(vcf_head_name,sep='\t', index=False, header=False, quoting=csv.QUOTE_NONE)
-#vcf_nohead = vcf_raw[~vcf_raw[0].str.contains('#')]
 cols = len(vcf_nohead.columns)
 chrs_bed = list(bed_raw[0].unique())
 chrs_vcf = list(vcf_nohead[0].unique())
@@ -86,7 +81,7 @@ for b in chrs_bed:
 
 	for vcf_pos in vcf_pos_fil_passed:
 		for srt, end in zip(bed_pos_srt, bed_pos_end):
-			if int(vcf_pos) > int(srt) and int(vcf_pos) < int(end):
+			if int(vcf_pos) > int(srt) and int(vcf_pos) <= int(end):
 				vcf_pos_final_passed.append(vcf_pos)
 
 	for vcf_pos in vcf_pos_fil_all:
