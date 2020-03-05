@@ -17,7 +17,7 @@ from pandas.core.common import SettingWithCopyWarning
 warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
 
 ############################### Usage Block ###########################################
-parser = argparse.ArgumentParser(description="Extract vcf records that falls in the given bed region")
+parser = argparse.ArgumentParser(description="Extract vcf records that falls in the given bed region, The current algorithm will hold all requested vcf records in memory prior to output. The user must ensure that there is adequate memory for this.")
 parser.add_argument("-i", "--vcf", metavar="vcf", required=True, help="Input vcf file", type=str)
 parser.add_argument("-b", "--bed", metavar="bed", required=True, help="Input Bed file", type=str)
 parser.add_argument("-o", "--output", metavar="out_vcf", required=True, help="Output vcf file", type=str)
