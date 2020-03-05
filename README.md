@@ -1,4 +1,4 @@
-# Extract On-Target and Off-Target VCF Records
+# Extract On-Target and Off-Target VCF PASSED Records
 
 Script to extract vcf records that falls in the given bed region, small alternative to the bedtools intersect. It also gives the vcf records which does not fall in the given bed regions (reverse or -r parameter).
 
