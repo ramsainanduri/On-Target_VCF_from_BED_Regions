@@ -86,7 +86,7 @@ for b in chrs_bed:
 
 	for vcf_pos in vcf_pos_fil_passed:
 		for srt, end in zip(bed_pos_srt, bed_pos_end):
-			if int(vcf_pos) >= int(srt) and int(vcf_pos) <= int(end):
+			if int(vcf_pos) > int(srt) and int(vcf_pos) < int(end):
 				vcf_pos_final_passed.append(vcf_pos)
 
 	for vcf_pos in vcf_pos_fil_all:
