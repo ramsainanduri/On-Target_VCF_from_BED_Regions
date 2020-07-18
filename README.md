@@ -4,17 +4,6 @@ Script to extract vcf records that falls in the given bed region, small alternat
 
 ## Requirements
 * Python 3
-* os
-* sys
-* csv
-* argparse
-* warnings
-* subprocess
-* pandas
-
-```bash
-pip install -r Requiremnts.txt
-```
 
 ## Inputs
 The file inputs are 
@@ -23,12 +12,11 @@ The file inputs are
 
 ## Outputs
 The file outputs are 
-* Passed On-Target  
-* All On-Target VCF 
+* On-Target VCF 
 
 ## Usage
 ```python
-python On-Target_VCF_from_BED_Regions.py -i input.vcf -b input.bed -o output -r N
+python On-Target_VCF_from_BED_Regions.py -i sample.vcf -b sample.bed -o output -r N
 ```
 ## Example
 I have provided an example data set.
