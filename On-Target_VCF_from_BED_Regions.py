@@ -60,8 +60,8 @@ with open(bed_ori, "r") as bed:
 	bed_records_tmp = [br for br in reg if "#" not in br]
 	bed_records = [txt.replace("\r", "") for txt in bed_records_tmp]
 
-while("" in vcf_records):
-	vcf_records.remove("")
+while("" in bed_records):
+	bed_records.remove("")
 bed.close()
 
 ############################## Writing output after matching on-target and off-target ##############################
